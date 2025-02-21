@@ -1,0 +1,9 @@
+{
+
+    "code-runner.executorMap": {
+          //PARA COMPILAR TODOS LOS FICHEROS EN LA CARPETA AL COMPILAR CON code runner
+          "c": "cd $dir && gcc -g -Wall -Wextra -O2 -D_GLIBCXX_DEBUG *.c -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+
+     }
+
+}

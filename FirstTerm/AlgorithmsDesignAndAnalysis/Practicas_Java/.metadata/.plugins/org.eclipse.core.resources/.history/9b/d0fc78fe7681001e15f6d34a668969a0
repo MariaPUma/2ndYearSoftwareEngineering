@@ -1,0 +1,78 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class Cobertura {
+
+	private Grafo grafo;
+
+	public Cobertura(Grafo g) {
+		grafo = g;
+	}
+
+	public Set<Integer> getConjuntoCobertura() {
+
+		//**** Completar la implementación del método*****************
+		Set<Integer> sol=new HashSet<>();
+		
+		Set<Integer> aux =grafo.nodos();
+		int i=0;
+		
+		
+		while (grafo.numAristas() != 0) {
+			System.out.print(i+"\n");
+			i++;
+			int másAristas= encontrar (aux, grafo);
+			
+			if (másAristas != -1) {
+				sol.add(másAristas);
+				System.out.print(másAristas+ "\n"+sol);
+				//borrar las aristas del nodo que hemos eliminado
+				BorrarAristas (grafo, másAristas);
+				aux.remove(másAristas);
+				
+			}
+			
+		}
+		
+		return sol;
+	}
+	
+	private static void BorrarAristas(Grafo g, int nodo) {
+		// TODO Auto-generated method stub
+		for (int i = 1; i <=g.nodos().size(); i++) {
+			g.removeArista(nodo,i);
+		}
+		
+	}
+
+	public static int encontrar (Set<Integer> nodos, Grafo g) {
+		int mayor= -1;
+		
+		for (Integer nodo : nodos) {
+			if(g.grado(nodo)>mayor) {
+				mayor =nodo;
+			}
+		}
+		
+		
+		return mayor;
+	}
+	
+	public static int[] ordenarNodos(Grafo g) {
+		Set<Integer> nodo=g.nodos();
+		int[] sol= new int[nodo.size()];
+		int i=0;
+		for (Integer integer : nodo) {
+			sol[i]=g.grado(integer);
+		}
+		
+		Arrays.sort(sol);
+		
+		return sol;
+		
+	}
+
+}

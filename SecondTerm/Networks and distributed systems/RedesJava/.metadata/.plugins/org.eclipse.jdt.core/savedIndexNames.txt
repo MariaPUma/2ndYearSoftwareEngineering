@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\mpord\Documents\Segundo Cuatrimestre\RyS\RedesJava\.metadata\.plugins\org.eclipse.jdt.core
+3867757006.index
+2116830046.index
+1865797976.index
+3464361218.index
+3133638494.index
