@@ -15,7 +15,7 @@ def mandelbrot(a,b):
     color_pixel = 255 - int(n * 255 / MAXIMO_ITERACIONES)
     return color_pixel
 
-df = pd.read_csv(r'C:\Users\mpord\Documents\Segundo Cuatrimestre\Sistemas_Inteligentes\Python\Pract 1 5_4\Pract4\bmw.csv')
+df = pd.read_csv(r'Pract4\bmw.csv')
 real_min = -2
 real_max = 1
 imag_min = -1

@@ -9,7 +9,7 @@ from sklearn import neural_network as neurona
 from sklearn import metrics as m
 from sklearn.preprocessing import label_binarize
 from sklearn.model_selection import cross_val_score
-datos = pd.read_csv(r'C:\Users\mpord\Documents\Segundo Cuatrimestre\Sistemas_Inteligentes\Python\Pract 1 5_4\Pract5\data.csv',sep=";")
+datos = pd.read_csv(r'Pract5\data.csv',sep=";")
 
 df_filtrado= datos[['Marital status', 'Course', 'Daytime/evening attendance	', 'Previous qualification', 'Nacionality', 'Gender', 'International', 'Target']]
 df_filtrado2 = df_filtrado.drop(df_filtrado[df_filtrado['Target'] == 'Enrolled'].index)
